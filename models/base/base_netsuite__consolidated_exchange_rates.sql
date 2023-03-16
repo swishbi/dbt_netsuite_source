@@ -1,3 +1,5 @@
+{{ config(enabled=(var('netsuite__multiple_currencies_enabled', false) and var('netsuite__multibook_accounting_enabled', false))) }}
+
 with consolidated_exchange_rates as (
     select * from {{ ref('stg_netsuite__consolidated_exchange_rates') }}
 ),

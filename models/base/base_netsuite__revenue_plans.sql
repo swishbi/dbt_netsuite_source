@@ -1,3 +1,5 @@
+{{ config(enabled=(var('netsuite__advanced_revenue_management_enabled', false))) }}
+
 with revenue_plans as (
     select * from {{ ref('stg_netsuite__revenue_plans') }}
 ),

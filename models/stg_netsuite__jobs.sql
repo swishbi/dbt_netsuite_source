@@ -1,3 +1,5 @@
+{{ config(enabled=(var('netsuite__using_jobs', false))) }}
+
 with source as (
       select * from {{ source('netsuite', 'job') }}
 ),

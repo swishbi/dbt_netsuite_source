@@ -1,3 +1,5 @@
+{{ config(enabled=(var('netsuite__using_jobs', false))) }}
+
 with jobs as (
     select * from {{ ref('stg_netsuite__jobs') }}
 ),

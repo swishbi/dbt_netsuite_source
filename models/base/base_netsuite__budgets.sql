@@ -1,3 +1,5 @@
+{{ config(enabled=(var('netsuite__using_budgets', false))) }}
+
 with budgets as (
     select * from {{ ref('stg_netsuite__budgets') }}
 ),

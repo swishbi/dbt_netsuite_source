@@ -1,3 +1,5 @@
+{{ config(enabled=(var('netsuite__advanced_billing_enabled', false))) }}
+
 with source as (
       select * from {{ source('netsuite', 'billingschedule') }}
 ),

@@ -1,3 +1,5 @@
+{{ config(enabled=(var('netsuite__team_selling_enabled', false))) }}
+
 with source as (
       select * from {{ source('netsuite', 'transactionsalesteam') }}
 ),

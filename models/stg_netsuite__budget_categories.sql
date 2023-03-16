@@ -1,3 +1,5 @@
+{{ config(enabled=(var('netsuite__using_budgets', false) and var('netsuite__multiple_budgets_enabled', false))) }}
+
 with source as (
       select * from {{ source('netsuite', 'budgetcategory') }}
 ),
