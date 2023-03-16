@@ -1,0 +1,932 @@
+version: 2
+
+models:
+  - name: base_netsuite__accounting_periods
+    description: ""
+    columns:
+      - name: is_all_locked
+        description: ""
+
+      - name: is_ap_locked
+        description: ""
+
+      - name: is_ar_locked
+        description: ""
+
+      - name: closed_at
+        description: ""
+
+      - name: closed_on_date
+        description: ""
+
+      - name: end_date
+        description: ""
+
+      - name: accounting_period_id
+        description: ""
+
+      - name: is_adjustment
+        description: ""
+
+      - name: is_posting
+        description: ""
+
+      - name: is_quarter
+        description: ""
+
+      - name: is_year
+        description: ""
+
+      - name: last_modified_date
+        description: ""
+
+      - name: parent_id
+        description: ""
+
+      - name: accounting_period_name
+        description: ""
+
+      - name: start_date
+        description: ""
+
+      - name: _swishbi_id
+        description: ""
+
+      - name: _change_type
+        description: ""
+
+      - name: _commit_version
+        description: ""
+
+      - name: _commit_timestamp
+        description: ""
+
+      - name: fiscal_calendar_id
+        description: ""
+
+  - name: base_netsuite__accounts
+    description: ""
+    columns:
+      - name: account_name
+        description: ""
+
+      - name: account_number
+        description: ""
+
+      - name: account_type_id
+        description: ""
+
+      - name: cash_flow_rate_type
+        description: ""
+
+      - name: class_id
+        description: ""
+
+      - name: currency_id
+        description: ""
+
+      - name: deferral_account_id
+        description: ""
+
+      - name: department_id
+        description: ""
+
+      - name: account_description
+        description: ""
+
+      - name: account_external_id
+        description: ""
+
+      - name: account_full_name
+        description: ""
+
+      - name: general_rate_type
+        description: ""
+
+      - name: account_id
+        description: ""
+
+      - name: is_including_child_subs
+        description: ""
+
+      - name: is_inventory
+        description: ""
+
+      - name: is_inactive
+        description: ""
+
+      - name: is_summary
+        description: ""
+
+      - name: last_modified_date
+        description: ""
+
+      - name: location_id
+        description: ""
+
+      - name: parent_id
+        description: ""
+
+      - name: _swishbi_id
+        description: ""
+
+      - name: _change_type
+        description: ""
+
+      - name: _commit_version
+        description: ""
+
+      - name: _commit_timestamp
+        description: ""
+
+      - name: is_account_intercompany
+        description: ""
+
+      - name: account_type_name
+        description: ""
+
+      - name: is_balancesheet
+        description: ""
+
+      - name: is_leftside
+        description: ""
+
+      - name: is_income_statement
+        description: ""
+
+      - name: is_accounts_payable
+        description: ""
+
+      - name: is_accounts_receivable
+        description: ""
+
+      - name: is_income_account
+        description: ""
+
+      - name: is_expense_account
+        description: ""
+
+      - name: account_type_sort_helper
+        description: ""
+
+      - name: account_category
+        description: ""
+
+  - name: base_netsuite__consolidated_exchange_rates
+    description: ""
+    columns:
+      - name: average_rate
+        description: ""
+
+      - name: current_rate
+        description: ""
+
+      - name: from_currency_id
+        description: ""
+
+      - name: from_subsidiar_id
+        description: ""
+
+      - name: historical_rate
+        description: ""
+
+      - name: consolidated_exchange_rate_id
+        description: ""
+
+      - name: accounting_period_id
+        description: ""
+
+      - name: to_currency_id
+        description: ""
+
+      - name: to_subsidiary_id
+        description: ""
+
+      - name: _swishbi_id
+        description: ""
+
+      - name: _change_type
+        description: ""
+
+      - name: _commit_version
+        description: ""
+
+      - name: _commit_timestamp
+        description: ""
+
+      - name: accounting_book_id
+        description: ""
+
+  - name: base_netsuite__customers
+    description: ""
+    columns:
+      - name: company_name
+        description: ""
+
+      - name: currency_id
+        description: ""
+
+      - name: default_billing_address_id
+        description: ""
+
+      - name: default_shipping_address_id
+        description: ""
+
+      - name: customer_email_address
+        description: ""
+
+      - name: entity_id
+        description: ""
+
+      - name: customer_external_id
+        description: ""
+
+      - name: customer_first_name
+        description: ""
+
+      - name: customer_first_order_date
+        description: ""
+
+      - name: customer_id
+        description: ""
+
+      - name: is_person
+        description: ""
+
+      - name: last_modified_date
+        description: ""
+
+      - name: customer_last_name
+        description: ""
+
+      - name: parent_id
+        description: ""
+
+      - name: customer_phone_number
+        description: ""
+
+      - name: receivables_account_id
+        description: ""
+
+      - name: sales_rep_id
+        description: ""
+
+      - name: _swishbi_id
+        description: ""
+
+      - name: _change_type
+        description: ""
+
+      - name: _commit_version
+        description: ""
+
+      - name: _commit_timestamp
+        description: ""
+
+      - name: customer_name
+        description: ""
+
+      - name: customer_name_last_first
+        description: ""
+
+      - name: customer_name_fist_last
+        description: ""
+
+      - name: customer_url_link
+        description: ""
+
+      - name: customer_city
+        description: ""
+
+      - name: customer_state
+        description: ""
+
+      - name: customer_zip_code
+        description: ""
+
+      - name: customer_country
+        description: ""
+
+      - name: sales_rep_name_last_first
+        description: ""
+
+      - name: sales_rep_name_first_last
+        description: ""
+
+      - name: parent_company_name
+        description: ""
+
+      - name: parent_customer_name
+        description: ""
+
+  - name: base_netsuite__employees
+    description: ""
+    columns:
+      - name: department_id
+        description: ""
+
+      - name: employee_status_id
+        description: ""
+
+      - name: employee_type_id
+        description: ""
+
+      - name: employee_first_name
+        description: ""
+
+      - name: employee_hire_date
+        description: ""
+
+      - name: employee_id
+        description: ""
+
+      - name: is_job_resource
+        description: ""
+
+      - name: is_sales_rep
+        description: ""
+
+      - name: employee_labor_cost
+        description: ""
+
+      - name: last_modified_date
+        description: ""
+
+      - name: employee_last_name
+        description: ""
+
+      - name: location_id
+        description: ""
+
+      - name: employee_release_date
+        description: ""
+
+      - name: subsidiary_id
+        description: ""
+
+      - name: supervisor_id
+        description: ""
+
+      - name: employee_job_title
+        description: ""
+
+      - name: work_calendar_id
+        description: ""
+
+      - name: _swishbi_id
+        description: ""
+
+      - name: _change_type
+        description: ""
+
+      - name: _commit_version
+        description: ""
+
+      - name: _commit_timestamp
+        description: ""
+
+      - name: employee_name_last_first
+        description: ""
+
+      - name: employee_name_first_last
+        description: ""
+
+      - name: employee_url_link
+        description: ""
+
+      - name: employee_type_name
+        description: ""
+
+      - name: employee_type_category_name
+        description: ""
+
+      - name: employee_status_name
+        description: ""
+
+      - name: employee_status_category_name
+        description: ""
+
+      - name: department_name
+        description: ""
+
+      - name: subsidiary_name
+        description: ""
+
+      - name: location_name
+        description: ""
+
+      - name: location_city
+        description: ""
+
+      - name: location_country
+        description: ""
+
+      - name: supervisor_name_last_first
+        description: ""
+
+      - name: supervisor_name_first_last
+        description: ""
+
+  - name: base_netsuite__entities
+    description: ""
+    columns:
+      - name: contact_id
+        description: ""
+
+      - name: customer_id
+        description: ""
+
+      - name: employee_id
+        description: ""
+
+      - name: entity_title
+        description: ""
+
+      - name: entity_id
+        description: ""
+
+      - name: is_person
+        description: ""
+
+      - name: last_modified_date
+        description: ""
+
+      - name: parent_id
+        description: ""
+
+      - name: project_id
+        description: ""
+
+      - name: top_level_parent_id
+        description: ""
+
+      - name: entity_type
+        description: ""
+
+      - name: vendor_id
+        description: ""
+
+      - name: _swishbi_id
+        description: ""
+
+      - name: _change_type
+        description: ""
+
+      - name: _commit_version
+        description: ""
+
+      - name: _commit_timestamp
+        description: ""
+
+      - name: entity_url_link
+        description: ""
+
+  - name: base_netsuite__items
+    description: ""
+    columns:
+      - name: asset_account_id
+        description: ""
+
+      - name: class_id
+        description: ""
+
+      - name: deferral_account_id
+        description: ""
+
+      - name: deferred_revenue_account_id
+        description: ""
+
+      - name: department_id
+        description: ""
+
+      - name: item_sales_description
+        description: ""
+
+      - name: expense_account_id
+        description: ""
+
+      - name: item_name
+        description: ""
+
+      - name: gain_loss_account_id
+        description: ""
+
+      - name: item_id
+        description: ""
+
+      - name: income_account_id
+        description: ""
+
+      - name: intercompany_expense_account_id
+        description: ""
+
+      - name: intercompany_income_account_id
+        description: ""
+
+      - name: is_fulfillable
+        description: ""
+
+      - name: item_type_id
+        description: ""
+
+      - name: last_modified_date
+        description: ""
+
+      - name: location_id
+        description: ""
+
+      - name: parent_id
+        description: ""
+
+      - name: subsidiary_id
+        description: ""
+
+      - name: _swishbi_id
+        description: ""
+
+      - name: _change_type
+        description: ""
+
+      - name: _commit_version
+        description: ""
+
+      - name: _commit_timestamp
+        description: ""
+
+      - name: item_url_link
+        description: ""
+
+  - name: base_netsuite__jobs
+    description: ""
+    columns:
+      - name: job_full_name
+        description: ""
+
+      - name: company_name
+        description: ""
+
+      - name: customer_id
+        description: ""
+
+      - name: default_billing_address_id
+        description: ""
+
+      - name: default_shipping_address_id
+        description: ""
+
+      - name: job_status_id
+        description: ""
+
+      - name: job_external_id
+        description: ""
+
+      - name: job_id
+        description: ""
+
+      - name: job_type_id
+        description: ""
+
+      - name: last_modified_date
+        description: ""
+
+      - name: parent_id
+        description: ""
+
+      - name: projected_end_date
+        description: ""
+
+      - name: project_manager_id
+        description: ""
+
+      - name: start_date
+        description: ""
+
+      - name: _swishbi_id
+        description: ""
+
+      - name: _change_type
+        description: ""
+
+      - name: _commit_version
+        description: ""
+
+      - name: _commit_timestamp
+        description: ""
+
+      - name: job_url_link
+        description: ""
+
+      - name: job_type_name
+        description: ""
+
+      - name: job_status_name
+        description: ""
+
+      - name: project_manager_name_last_first
+        description: ""
+
+      - name: project_manager_name_first_last
+        description: ""
+
+  - name: base_netsuite__locations
+    description: ""
+    columns:
+      - name: location_full_name
+        description: ""
+
+      - name: location_id
+        description: ""
+
+      - name: last_modified_date
+        description: ""
+
+      - name: main_address_id
+        description: ""
+
+      - name: location_name
+        description: ""
+
+      - name: parent_id
+        description: ""
+
+      - name: subsidiary_id
+        description: ""
+
+      - name: _swishbi_id
+        description: ""
+
+      - name: _change_type
+        description: ""
+
+      - name: _commit_version
+        description: ""
+
+      - name: _commit_timestamp
+        description: ""
+
+      - name: location_city
+        description: ""
+
+      - name: location_state
+        description: ""
+
+      - name: location_zip_code
+        description: ""
+
+      - name: location_country
+        description: ""
+
+  - name: base_netsuite__transaction_lines
+    description: ""
+    columns:
+      - name: actual_ship_date
+        description: ""
+
+      - name: class_id
+        description: ""
+
+      - name: cost_estimate_rate
+        description: ""
+
+      - name: created_from_id
+        description: ""
+
+      - name: created_po_id
+        description: ""
+
+      - name: department_id
+        description: ""
+
+      - name: is_drop_shipment
+        description: ""
+
+      - name: entity_id
+        description: ""
+
+      - name: transaction_line_id
+        description: ""
+
+      - name: is_billable
+        description: ""
+
+      - name: is_closed
+        description: ""
+
+      - name: is_cogs
+        description: ""
+
+      - name: is_fully_shipped
+        description: ""
+
+      - name: is_inventory_affecting
+        description: ""
+
+      - name: item_id
+        description: ""
+
+      - name: line_last_modified_date
+        description: ""
+
+      - name: line_sequence_number
+        description: ""
+
+      - name: location_id
+        description: ""
+
+      - name: is_main_line
+        description: ""
+
+      - name: memo
+        description: ""
+
+      - name: quantity
+        description: ""
+
+      - name: quantity_back_ordered
+        description: ""
+
+      - name: quantity_billed
+        description: ""
+
+      - name: quantity_committed
+        description: ""
+
+      - name: quantity_packed
+        description: ""
+
+      - name: quantity_picked
+        description: ""
+
+      - name: quantity_shipped_received
+        description: ""
+
+      - name: rate
+        description: ""
+
+      - name: is_special_order
+        description: ""
+
+      - name: subsidiary_id
+        description: ""
+
+      - name: is_tax_line
+        description: ""
+
+      - name: transaction_id
+        description: ""
+
+      - name: transaction_line_unique_key
+        description: ""
+
+      - name: _swishbi_id
+        description: ""
+
+      - name: _change_type
+        description: ""
+
+      - name: _commit_version
+        description: ""
+
+      - name: _commit_timestamp
+        description: ""
+
+      - name: account_id
+        description: ""
+
+      - name: amount
+        description: ""
+
+      - name: credit_amount
+        description: ""
+
+      - name: debit_amount
+        description: ""
+
+      - name: paid_amount
+        description: ""
+
+      - name: unpaid_amount
+        description: ""
+
+      - name: is_posting
+        description: ""
+
+  - name: base_netsuite__transactions
+    description: ""
+    columns:
+      - name: closed_date
+        description: ""
+
+      - name: created_date
+        description: ""
+
+      - name: currency_id
+        description: ""
+
+      - name: due_date
+        description: ""
+
+      - name: employee_id
+        description: ""
+
+      - name: entity_id
+        description: ""
+
+      - name: expected_close_date
+        description: ""
+
+      - name: transaction_id
+        description: ""
+
+      - name: is_intercompany_adjustment
+        description: ""
+
+      - name: is_reversal
+        description: ""
+
+      - name: last_modified_date
+        description: ""
+
+      - name: memo
+        description: ""
+
+      - name: is_posting
+        description: ""
+
+      - name: accounting_period_id
+        description: ""
+
+      - name: transaction_status_id
+        description: ""
+
+      - name: transaction_date
+        description: ""
+
+      - name: transaction_name
+        description: ""
+
+      - name: transaction_number
+        description: ""
+
+      - name: transaction_type
+        description: ""
+
+      - name: is_voided
+        description: ""
+
+      - name: _swishbi_id
+        description: ""
+
+      - name: _change_type
+        description: ""
+
+      - name: _commit_version
+        description: ""
+
+      - name: _commit_timestamp
+        description: ""
+
+      - name: transaction_url_link
+        description: ""
+
+      - name: transaction_status_name
+        description: ""
+
+      - name: transaction_status_full_name
+        description: ""
+
+  - name: base_netsuite__vendors
+    description: ""
+    columns:
+      - name: vendor_category_id
+        description: ""
+
+      - name: company_name
+        description: ""
+
+      - name: created_date
+        description: ""
+
+      - name: vendor_id
+        description: ""
+
+      - name: last_modified_date
+        description: ""
+
+      - name: _swishbi_id
+        description: ""
+
+      - name: _change_type
+        description: ""
+
+      - name: _commit_version
+        description: ""
+
+      - name: _commit_timestamp
+        description: ""
+
+      - name: vendor_url_link
+        description: ""
+
+      - name: vendor_category_name
+        description: ""
