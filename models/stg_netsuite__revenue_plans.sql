@@ -24,7 +24,10 @@ renamed as (
         itemresalecostamount as item_resale_cost_amount,
         lastmodifieddate as last_modified_date,
         recordnumber as record_number,
+        {% if var('netsuite__multiple_currencies_enabled', false) %}
         parentlinecurrency as parent_line_currency,
+        revenueplancurrency as revenue_plan_currency,
+        {% endif %}
         periodoffset as period_offset,
         exchangerate as exchange_rate,
         recalcadjustperiodoffset as recalculation_adjustment_period_offset,
@@ -33,7 +36,6 @@ renamed as (
         reforecastmethod as reforecast_method_id,
         remainingdeferredbalance as remaining_deferred_balance,
         remainingdeferredcostbalance as remaining_deferred_cost_balance,
-        revenueplancurrency as revenue_plan_currency,
         revenueplantype as revenue_plan_type_id,
         revrecenddatesource as rev_rec_end_date_source_id,
         revenuerecognitionrule as revenue_recognition_rule_id,

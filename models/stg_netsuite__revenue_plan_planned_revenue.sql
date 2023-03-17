@@ -8,7 +8,9 @@ renamed as (
         amount,
         dateexecuted as date_executed,
         deferredrevenueaccount as deferred_revenue_account_id,
+        {% if var('netsuite__multiple_currencies_enabled', false) %}
         exchangerate as exchange_rate,
+        {% endif %}
         id as revenue_plan_planned_revenue_id,
         isrecognized = 'T' as is_recognized,
         journal as journal_entry_id,

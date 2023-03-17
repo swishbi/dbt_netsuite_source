@@ -27,7 +27,7 @@ renamed as (
         _commit_version,
         _commit_timestamp,
 
-        concat('https://{{ var("netsuite_account_id") }}.app.netsuite.com/app/common/item/item.nl?id=', id) as item_url_link
+        concat('https://{{ var("netsuite_account_id", "123456") }}.app.netsuite.com/app/common/item/item.nl?id=', id) as item_url_link
 
     from source
 )

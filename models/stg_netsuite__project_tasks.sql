@@ -11,7 +11,9 @@ renamed as (
         issummarytask = 'T' as is_summary_task,
         nonbillabletask = 'T' as is_non_billable_task,
         parent as parent_id,
+        {% if var('netsuite__planned_work_enabled', false) %}
         plannedwork as planned_work,
+        {% endif %}
         project as project_id,
         remainingwork as remaining_work,
         startdatetime as project_task_start_date,

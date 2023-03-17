@@ -24,7 +24,9 @@ renamed as (
         memo,
         rate,
         subsidiary as subsidiary_id,
+        {% if var('netsuite__time_off_management_enabled', false) %}
         timeofftype as time_off_type_id,
+        {% endif %}
         trandate as date,
         _swishbi_id,
         _change_type,

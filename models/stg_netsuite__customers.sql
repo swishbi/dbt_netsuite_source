@@ -30,7 +30,7 @@ renamed as (
         coalesce(companyname, concat_ws(', ', lastname, firstname)) as customer_name,
         concat_ws(', ', lastname, firstname) as customer_name_last_first,
         concat_ws(' ', firstname, lastname) as customer_name_fist_last,
-        concat('https://{{ var("netsuite_account_id") }}.app.netsuite.com/app/common/entity/custjob.nl?id=', id) as customer_url_link
+        concat('https://{{ var("netsuite_account_id", "123456") }}.app.netsuite.com/app/common/entity/custjob.nl?id=', id) as customer_url_link
 
     from source
 )

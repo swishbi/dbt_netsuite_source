@@ -13,7 +13,7 @@ renamed as (
         _commit_version,
         _commit_timestamp,
 
-        concat('https://{{ var("netsuite_account_id") }}.app.netsuite.com/app/common/entity/vendor.nl?id=', id) as vendor_url_link
+        concat('https://{{ var("netsuite_account_id", "123456") }}.app.netsuite.com/app/common/entity/vendor.nl?id=', id) as vendor_url_link
 
     from source
 )

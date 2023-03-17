@@ -30,6 +30,8 @@ renamed as (
         createrevenueplanson as create_revenue_plans_on_id,
         {% if var('netsuite__multiple_currencies_enabled', false) %}
         currency as currency_id,
+        exchangerate as exchange_rate,
+        revreclassfxaccount as foreign_currency_adjustment_account_id,
         {% endif %}
         entity as entity_id,
         deferralaccount as deferral_account_id,
@@ -42,14 +44,12 @@ renamed as (
         effectivestartdate as effective_start_date,
         contingentrevenuehandling = 'T' as is_contingent_revenue_handling,
         revrecenddate as rev_rec_end_date,
-        exchangerate as exchange_rate,
         treatmentoverride = 'T' as is_treatment_override,
         expensemigrateadjaccount as expense_migration_adjustment_account_id,
         externalid as external_id,
         fairvalueoverride = 'T' as is_fair_value_override,
         forecastenddate as forecast_end_date,
         forecaststartdate as forecast_start_date,
-        revreclassfxaccount as foreign_currency_adjustment_account_id,
         fullname as revenue_element_full_name,
         id as revenue_element_id,
         isbomitemtype = 'T' as is_bom_item_type,

@@ -30,7 +30,7 @@ renamed as (
         _commit_version,
         _commit_timestamp,
 
-        concat('https://{{ var("netsuite_account_id") }}.app.netsuite.com/app/accounting/transactions/', lower(type), '.nl?id=', id) as transaction_url_link,
+        concat('https://{{ var("netsuite_account_id", "123456") }}.app.netsuite.com/app/accounting/transactions/', lower(type), '.nl?id=', id) as transaction_url_link,
         concat(type,'_',id) as reference_id
 
     from source
