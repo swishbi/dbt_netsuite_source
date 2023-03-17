@@ -12,9 +12,12 @@ renamed as (
         employee as employee_id,
         hours,
         id as time_entry_id,
-        isbillable as is_billable,
-        isproductive as is_productive,
-        isutilized as is_utilized,
+        isbillable = 'T' as is_billable,
+        {% if var('netsuite__advanced_jobs_enabled', false) %}
+        isproductive = 'T' as is_productive,
+        isutilized = 'T' as is_utilized,
+        timetype as time_type,
+        {% endif %}
         item as item_id,
         lastmodifieddate as last_modified_date,
         location as location_id,
@@ -22,7 +25,6 @@ renamed as (
         rate,
         subsidiary as subsidiary_id,
         timeofftype as time_off_type_id,
-        timetype as time_type,
         trandate as date,
         _swishbi_id,
         _change_type,

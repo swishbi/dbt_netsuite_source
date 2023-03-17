@@ -6,7 +6,7 @@ renamed as (
         externalid as class_external_id,
         fullname as class_full_name,
         id as class_id,
-        isinactive as is_inactive,
+        isinactive = 'T' as is_inactive,
         lastmodifieddate as last_modified_date,
         name as class_name,
         _swishbi_id,

@@ -3,9 +3,17 @@ with source as (
 ),
 renamed as (
     select
-        balancesheet as is_balancesheet,
+        balancesheet = 'T' as is_balancesheet,
         id as account_type_id,
-        left as is_leftside,
+        {%- if target.type == 'bigquery' -%}
+        `left` 
+        {%- elif target.type == 'snowflake' -%}
+        "LEFT"
+        {%- elif target.type in ('redshift', 'postgres') -%}
+        "left" 
+        {%- else -%}
+        left
+        {%- endif -%} = 'T' as is_leftside,
         longname as account_type_name,
         _swishbi_id,
         _change_type,

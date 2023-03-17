@@ -5,12 +5,12 @@ with source as (
 ),
 renamed as (
     select
-        {{ adapter.quote("key") }} as revenue_plan_status_id,
-        {{ adapter.quote("name") }} as revenue_plan_status_name,
-        {{ adapter.quote("_swishbi_id") }},
-        {{ adapter.quote("_change_type") }},
-        {{ adapter.quote("_commit_version") }},
-        {{ adapter.quote("_commit_timestamp") }}
+        key as revenue_plan_status_id,
+        name as revenue_plan_status_name,
+        _swishbi_id,
+        _change_type,
+        _commit_version,
+        _commit_timestamp
 
     from source
 )

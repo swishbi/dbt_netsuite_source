@@ -6,10 +6,16 @@ with source as (
 renamed as (
     select
         account as account_id,
+        {% if var('netsuite__multibook_accounting_enabled', false) %}
         accountingbook as accounting_book_id,
+        {% endif %}
+        {% if var('netsuite__multiple_budgets_enabled', false) %}
         category as budget_category_id,
+        {% endif %}
         class as class_id,
+        {% if var('netsuite__multiple_currencies_enabled', false) %}
         currency as currency_id,
+        {% endif %}
         customer as customer_id,
         department as department_id,
         id as budget_id,

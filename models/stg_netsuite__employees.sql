@@ -9,9 +9,11 @@ renamed as (
         firstname as employee_first_name,
         hiredate as employee_hire_date,
         id as employee_id,
-        isjobresource as is_job_resource,
-        issalesrep as is_sales_rep,
+        issalesrep = 'T' as is_sales_rep,
+        {% if var('netsuite__advanced_jobs_enabled', false) %}
+        isjobresource = 'T' as is_job_resource,
         laborcost as employee_labor_cost,
+        {% endif %}
         lastmodifieddate as last_modified_date,
         lastname as employee_last_name,
         location as location_id,
@@ -27,7 +29,7 @@ renamed as (
 
         concat_ws(', ', lastname, firstname) as employee_name_last_first,
         concat_ws(' ', firstname, lastname) as employee_name_first_last,
-        concat('https://{{ var("netsuite_account_id") }}.app.netsuite.com/app/common/entity/employee.nl?id=', id) as employee_url_link
+        concat('https://{{ var("netsuite_account_id", "123456") }}.app.netsuite.com/app/common/entity/employee.nl?id=', id) as employee_url_link
 
     from source
 )

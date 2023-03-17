@@ -8,7 +8,7 @@ renamed as (
         contribution,
         employee as employee_id,
         id as transaction_sales_team_id,
-        isprimary as is_primary,
+        isprimary = 'T' as is_primary,
         salesrole as sales_role,
         transaction as transaction_id,
         _swishbi_id,

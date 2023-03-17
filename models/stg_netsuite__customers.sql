@@ -4,7 +4,9 @@ with source as (
 renamed as (
     select
         companyname as company_name,
+        {% if var('netsuite__multiple_currencies_enabled', false) %}
         currency as currency_id,
+        {% endif %}
         defaultbillingaddress as default_billing_address_id,
         defaultshippingaddress as default_shipping_address_id,
         email as customer_email_address,
@@ -13,7 +15,7 @@ renamed as (
         firstname as customer_first_name,
         firstorderdate as customer_first_order_date,
         id as customer_id,
-        isperson as is_person,
+        isperson = 'T' as is_person,
         lastmodifieddate as last_modified_date,
         lastname as customer_last_name,
         parent as parent_id,

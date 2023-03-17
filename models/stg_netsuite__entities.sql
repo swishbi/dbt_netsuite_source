@@ -10,7 +10,7 @@ renamed as (
         entitynumber as entity_number,
         entitytitle as entity_title,
         id as entity_id,
-        isperson as is_person,
+        isperson = 'T' as is_person,
         lastmodifieddate as last_modified_date,
         parent as parent_id,
         project as project_id,

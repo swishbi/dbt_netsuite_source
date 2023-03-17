@@ -11,7 +11,7 @@ renamed as (
         credit as credit_amount,
         debit as debit_amount,
         netamount as net_amount,
-        posting as is_posting,
+        posting = 'T' as is_posting,
         transaction as transaction_id,
         transactionline as transaction_line_id,
         _swishbi_id,

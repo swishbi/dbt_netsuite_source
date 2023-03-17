@@ -5,8 +5,8 @@ renamed as (
     select
         context,
         deleteddate as deleted_date,
-        iscustomlist as is_custom_list,
-        iscustomrecord as is_custom_record,
+        iscustomlist = 'T' as is_custom_list,
+        iscustomrecord = 'T' as is_custom_record,
         name as record_name,
         recordid as record_id,
         recordtypeid as record_type_id,
