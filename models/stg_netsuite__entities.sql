@@ -10,10 +10,12 @@ renamed as (
         entitynumber as entity_number,
         entitytitle as entity_title,
         id as entity_id,
-        isperson as is_person,
+        isperson = 'T' as is_person,
         lastmodifieddate as last_modified_date,
         parent as parent_id,
+        {% if var('netsuite__using_jobs', false) %}
         project as project_id,
+        {% endif %}
         toplevelparent as top_level_parent_id,
         type as entity_type,
         vendor as vendor_id,
@@ -22,7 +24,7 @@ renamed as (
         _commit_version,
         _commit_timestamp,
 
-        concat('https://{{ var("netsuite_account_id") }}.app.netsuite.com/app/common/entity', lower(type), '.nl?id=', id) as entity_url_link
+        concat('https://{{ var("netsuite_account_id", "123456") }}.app.netsuite.com/app/common/entity', lower(type), '.nl?id=', id) as entity_url_link
 
     from source
 )

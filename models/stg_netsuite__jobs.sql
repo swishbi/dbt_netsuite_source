@@ -1,3 +1,5 @@
+{{ config(enabled=(var('netsuite__using_jobs', false))) }}
+
 with source as (
       select * from {{ source('netsuite', 'job') }}
 ),
@@ -22,7 +24,7 @@ renamed as (
         _commit_version,
         _commit_timestamp,
 
-        concat('https://{{ var("netsuite_account_id") }}.app.netsuite.com/app/common/entity/custjob.nl?id=', id) as job_url_link
+        concat('https://{{ var("netsuite_account_id", "123456") }}.app.netsuite.com/app/common/entity/custjob.nl?id=', id) as job_url_link
 
     from source
 )

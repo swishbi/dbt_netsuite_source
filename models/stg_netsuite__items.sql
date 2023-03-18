@@ -16,7 +16,7 @@ renamed as (
         incomeaccount as income_account_id,
         intercoexpenseaccount as intercompany_expense_account_id,
         intercoincomeaccount as intercompany_income_account_id,
-        isfulfillable as is_fulfillable,
+        isfulfillable = 'T' as is_fulfillable,
         itemtype as item_type_id,
         lastmodifieddate as last_modified_date,
         location as location_id,
@@ -27,7 +27,7 @@ renamed as (
         _commit_version,
         _commit_timestamp,
 
-        concat('https://{{ var("netsuite_account_id") }}.app.netsuite.com/app/common/item/item.nl?id=', id) as item_url_link
+        concat('https://{{ var("netsuite_account_id", "123456") }}.app.netsuite.com/app/common/item/item.nl?id=', id) as item_url_link
 
     from source
 )

@@ -1,4 +1,4 @@
-{{ config(enabled=(var('netsuite__advanced_jobs_enabled', true))) }}
+{{ config(enabled=(var('netsuite__using_jobs', false) and var('netsuite__advanced_jobs_enabled', false))) }}
 
 with source as (
       select * from {{ source('netsuite', 'projecttaskassignee') }}
@@ -6,7 +6,9 @@ with source as (
 renamed as (
     select
         estimatedwork as estimated_work,
+        {% if var('netsuite__planned_work_enabled', false) %}
         plannedwork as planned_work,
+        {% endif %}
         projecttask as project_task_id,
         resource as resource_id,
         serviceitem as service_item_id,

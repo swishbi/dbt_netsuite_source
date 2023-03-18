@@ -10,17 +10,6 @@ models:
 
 vars:
   netsuite_source:
-    netsuite__advanced_jobs_enabled: false
-    netsuite__advanced_revenue_management_enabled: false
-    netsuite__multibook_accounting_enabled: false # Disable `accountingbooksubsidiary` and `accountingbook` if you are not using the Multi-Book Accounting feature
-    netsuite__multiple_calendars_enabled: false # Disable `accountingperiodfiscalcalendars` if you are not using the Multiple Calendars feature
-    netsuite__multiple_currencies_enabled: false # Disable `currencies` and `consolidatedexchangerates` if you are not using the Multiple Currencies feature
-    netsuite__planned_work_enabled: false
-    netsuite__time_tracking_enabled: false 
-    netsuite__using_vendor_categories: false # Disable `vendorcategory` if you don't categorize your vendors
-    netsuite__using_jobs: false # Disable `job` if you don't use jobs
-    
-    
     accounts_pass_through_columns: []
     classes_pass_through_columns: []
     consolidated_exchange_rates_pass_through_columns: []

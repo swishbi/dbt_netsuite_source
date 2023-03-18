@@ -1,3 +1,5 @@
+{{ config(enabled=(var('netsuite__multiple_calendars_enabled', false))) }}
+
 with source as (
       select * from {{ source('netsuite', 'accountingperiodfiscalcalendars') }}
 ),
