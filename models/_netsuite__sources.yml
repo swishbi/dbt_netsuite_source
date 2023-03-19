@@ -4,8 +4,8 @@ sources:
   - name: netsuite
     schema: "{{ var('netsuite_schema', 'netsuite') }}"
     database: "{% if target.type != 'spark'%}{{ var('netsuite_database', target.database) }}{% endif %}"
-    loader: "{{ var('data_loader') }}"
-    loaded_at_field: "{{ var('loaded_at_field') }}"
+    loader: "{{ var('data_loader', 'fivetran') }}"
+    loaded_at_field: "{{ var('loaded_at_field', '_fivetran_synced') }}"
     freshness:
       warn_after: { count: 24, period: hour }
       error_after: { count: 48, period: hour }
