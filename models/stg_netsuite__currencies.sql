@@ -1,7 +1,7 @@
 {{ config(enabled=(var('netsuite__multiple_currencies_enabled', false))) }}
 
 with source as (
-      select * from {{ source('netsuite', 'currency') }}
+      select * from {{ var('netsuite_currencies') }}
 ),
 renamed as (
     select

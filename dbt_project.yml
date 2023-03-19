@@ -1,7 +1,7 @@
 config-version: 2
 require-dbt-version: [">=1.3.0", "<2.0.0"]
 name: 'netsuite_source'
-version: '1.0.0'
+version: '0.1.0'
 
 models:
   netsuite_source:
@@ -10,6 +10,67 @@ models:
 
 vars:
   netsuite_source:
+    netsuite_account_types: "{{ source('netsuite', 'account_type') }}"
+    netsuite_accounting_book_subsidiaries: "{{ source('netsuite', 'accounting_book_subsidiaries') }}"
+    netsuite_accounting_books: "{{ source('netsuite', 'accounting_book') }}"
+    netsuite_accounting_period_fiscal_calendars: "{{ source('netsuite', 'accounting_period_fiscal_calendars') }}"
+    netsuite_accounting_periods: "{{ source('netsuite', 'accounting_period') }}"
+    netsuite_accounts: "{{ source('netsuite', 'account') }}"
+    netsuite_billing_revenue_events: "{{ source('netsuite', 'billing_revenue_events') }}"
+    netsuite_billing_schedule_milestones: "{{ source('netsuite', 'billing_schedule_milestones') }}"
+    netsuite_billing_schedule_recurrences: "{{ source('netsuite', 'billing_schedule_recurrences') }}"
+    netsuite_billing_schedule_types: "{{ source('netsuite', 'billing_schedule_types') }}"
+    netsuite_billing_schedules: "{{ source('netsuite', 'billing_schedules') }}"
+    netsuite_budget_categories: "{{ source('netsuite', 'budget_categories') }}"
+    netsuite_budgets_machine: "{{ source('netsuite', 'budgets_machine') }}"
+    netsuite_budgets: "{{ source('netsuite', 'budgets') }}"
+    netsuite_classes: "{{ source('netsuite', 'classification') }}"
+    netsuite_consolidated_exchange_rates: "{{ source('netsuite', 'consolidated_exchange_rate') }}"
+    netsuite_currencies: "{{ source('netsuite', 'currency') }}"
+    netsuite_customer_address_book_entity_address: "{{ source('netsuite', 'customer_address_book_entity_address') }}"
+    netsuite_customer_address_books: "{{ source('netsuite', 'customer_address_books') }}"
+    netsuite_customers: "{{ source('netsuite', 'customer') }}"
+    netsuite_deleted_records: "{{ source('netsuite', 'deleted_records') }}"
+    netsuite_departments: "{{ source('netsuite', 'department') }}"
+    netsuite_employee_status_categories: "{{ source('netsuite', 'employee_status_categories') }}"
+    netsuite_employee_statuses: "{{ source('netsuite', 'employee_statuses') }}"
+    netsuite_employee_type_categories: "{{ source('netsuite', 'employee_type_categories') }}"
+    netsuite_employee_types: "{{ source('netsuite', 'employee_types') }}"
+    netsuite_employees: "{{ source('netsuite', 'employees') }}"
+    netsuite_entities: "{{ source('netsuite', 'entity') }}"
+    netsuite_entity_address: "{{ source('netsuite', 'entity_address') }}"
+    netsuite_item_subtypes: "{{ source('netsuite', 'item_subtypes') }}"
+    netsuite_item_types: "{{ source('netsuite', 'item_types') }}"
+    netsuite_items: "{{ source('netsuite', 'item') }}"
+    netsuite_job_resources: "{{ source('netsuite', 'job_resources') }}"
+    netsuite_job_statuses: "{{ source('netsuite', 'job_statuses') }}"
+    netsuite_job_types: "{{ source('netsuite', 'job_types') }}"
+    netsuite_jobs: "{{ source('netsuite', 'job') }}"
+    netsuite_location_main_address: "{{ source('netsuite', 'location_main_address') }}"
+    netsuite_locations: "{{ source('netsuite', 'location') }}"
+    netsuite_next_transaction_line_links: "{{ source('netsuite', 'next_transaction_line_links') }}"
+    netsuite_previous_transaction_line_links: "{{ source('netsuite', 'previous_transaction_line_links') }}"
+    netsuite_project_task_assignees: "{{ source('netsuite', 'project_task_assignees') }}"
+    netsuite_project_tasks: "{{ source('netsuite', 'project_tasks') }}"
+    netsuite_revenue_elements: "{{ source('netsuite', 'revenue_elements') }}"
+    netsuite_revenue_plan_planned_costs: "{{ source('netsuite', 'revenue_plan_planned_costs') }}"
+    netsuite_revenue_plan_planned_revenue: "{{ source('netsuite', 'revenue_plan_planned_revenue') }}"
+    netsuite_revenue_plan_statuses: "{{ source('netsuite', 'revenue_plan_statuses') }}"
+    netsuite_revenue_plan_types: "{{ source('netsuite', 'revenue_plan_types') }}"
+    netsuite_revenue_plans: "{{ source('netsuite', 'revenue_plans') }}"
+    netsuite_subsidiaries: "{{ source('netsuite', 'subsidiary') }}"
+    netsuite_time_entries: "{{ source('netsuite', 'time_entries') }}"
+    netsuite_time_off_types: "{{ source('netsuite', 'time_off_types') }}"
+    netsuite_transaction_accounting_lines: "{{ source('netsuite', 'transaction_accounting_line') }}"
+    netsuite_transaction_lines: "{{ source('netsuite', 'transaction_line') }}"
+    netsuite_transaction_sales_teams: "{{ source('netsuite', 'transaction_sales_teams') }}"
+    netsuite_transaction_statuses: "{{ source('netsuite', 'transaction_statuses') }}"
+    netsuite_transactions: "{{ source('netsuite', 'transaction') }}"
+    netsuite_vendor_categories: "{{ source('netsuite', 'vendor_category') }}"
+    netsuite_vendors: "{{ source('netsuite', 'vendor') }}"
+    netsuite_work_calendar_holidays: "{{ source('netsuite', 'work_calendar_holidays') }}"
+    netsuite_work_calendars: "{{ source('netsuite', 'work_calendars') }}"
+    
     accounts_pass_through_columns: []
     classes_pass_through_columns: []
     consolidated_exchange_rates_pass_through_columns: []

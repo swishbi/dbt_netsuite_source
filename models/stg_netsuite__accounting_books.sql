@@ -1,7 +1,7 @@
 {{ config(enabled=(var('netsuite__multibook_accounting_enabled', false))) }}
 
 with source as (
-      select * from {{ source('netsuite', 'accountingbook') }}
+      select * from {{ var('netsuite_accounting_books') }}
 ),
 renamed as (
     select

@@ -1,7 +1,7 @@
 {{ config(enabled=(var('netsuite__time_tracking_enabled', false))) }}
 
 with source as (
-      select * from {{ source('netsuite', 'timebill') }}
+      select * from {{ var('netsuite_time_entries') }}
 ),
 renamed as (
     select

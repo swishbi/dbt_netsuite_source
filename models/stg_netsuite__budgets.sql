@@ -1,7 +1,7 @@
 {{ config(enabled=(var('netsuite__using_budgets', false))) }}
 
 with source as (
-      select * from {{ source('netsuite', 'budgets') }}
+      select * from {{ var('netsuite_budgets') }}
 ),
 renamed as (
     select

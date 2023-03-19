@@ -1,7 +1,7 @@
 {{ config(enabled=(var('netsuite__using_jobs', false) and var('netsuite__advanced_jobs_enabled', false))) }}
 
 with source as (
-      select * from {{ source('netsuite', 'projecttask') }}
+      select * from {{ var('netsuite_project_tasks') }}
 ),
 renamed as (
     select

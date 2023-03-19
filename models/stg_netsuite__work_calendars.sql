@@ -1,7 +1,7 @@
 {{ config(enabled=(var('netsuite__time_off_management_enabled', false))) }}
 
 with source as (
-      select * from {{ source('netsuite', 'workcalendar') }}
+      select * from {{ var('netsuite_work_calendars') }}
 ),
 renamed as (
     select

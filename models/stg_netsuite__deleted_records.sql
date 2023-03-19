@@ -1,5 +1,5 @@
 with source as (
-      select * from {{ source('netsuite', 'deletedrecord') }}
+      select * from {{ var('netsuite_deleted_records') }}
 ),
 renamed as (
     select

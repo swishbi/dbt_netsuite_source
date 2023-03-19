@@ -1,7 +1,7 @@
 {{ config(enabled=(var('netsuite__using_jobs', false))) }}
 
 with source as (
-      select * from {{ source('netsuite', 'jobstatus') }}
+      select * from {{ var('netsuite_job_statuses') }}
 ),
 renamed as (
     select

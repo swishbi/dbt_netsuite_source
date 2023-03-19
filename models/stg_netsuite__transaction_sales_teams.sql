@@ -1,7 +1,7 @@
 {{ config(enabled=(var('netsuite__team_selling_enabled', false))) }}
 
 with source as (
-      select * from {{ source('netsuite', 'transactionsalesteam') }}
+      select * from {{ var('netsuite_transaction_sales_teams') }}
 ),
 renamed as (
     select

@@ -1,5 +1,5 @@
 with source as (
-      select * from {{ source('netsuite', 'itemtype') }}
+      select * from {{ var('netsuite_item_types') }}
 ),
 renamed as (
     select

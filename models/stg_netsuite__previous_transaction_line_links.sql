@@ -1,5 +1,5 @@
 with source as (
-      select * from {{ source('netsuite', 'previoustransactionlinelink') }}
+      select * from {{ var('netsuite_previous_transaction_line_links') }}
 ),
 renamed as (
     select

@@ -1,7 +1,7 @@
 {{ config(enabled=(var('netsuite__advanced_revenue_management_enabled', false))) }}
 
 with source as (
-      select * from {{ source('netsuite', 'revenueplan') }}
+      select * from {{ var('netsuite_revenue_plans') }}
 ),
 renamed as (
     select

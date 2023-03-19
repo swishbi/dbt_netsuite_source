@@ -1,7 +1,7 @@
 {{ config(enabled=(var('netsuite__advanced_revenue_management_enabled', false))) }}
 
 with source as (
-      select * from {{ source('netsuite', 'billingschedulerecurrence') }}
+      select * from {{ var('netsuite_billing_schedule_recurrences') }}
 ),
 renamed as (
     select

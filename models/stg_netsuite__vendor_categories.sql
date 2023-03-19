@@ -1,7 +1,7 @@
 {{ config(enabled=(var('netsuite__using_vendor_categories', false))) }}
 
 with source as (
-      select * from {{ source('netsuite', 'vendorcategory') }}
+      select * from {{ var('netsuite_vendor_categories') }}
 ),
 renamed as (
     select
