@@ -19,10 +19,6 @@ renamed as (
         projectedenddate as projected_end_date,
         projectmanager as project_manager_id,
         startdate as start_date,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp,
 
         concat('https://{{ var("netsuite_account_id", "123456") }}.app.netsuite.com/app/common/entity/custjob.nl?id=', id) as job_url_link
 

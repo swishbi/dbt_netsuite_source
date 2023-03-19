@@ -9,11 +9,7 @@ renamed as (
         iscustomrecord = 'T' as is_custom_record,
         name as record_name,
         recordid as record_id,
-        recordtypeid as record_type_id,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp
+        recordtypeid as record_type_id
 
     from source
 )

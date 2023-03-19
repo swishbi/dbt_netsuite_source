@@ -13,11 +13,7 @@ renamed as (
         thursday,
         tuesday,
         wednesday,
-        workhoursperday as work_hours_per_day,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp
+        workhoursperday as work_hours_per_day
 
     from source
 )

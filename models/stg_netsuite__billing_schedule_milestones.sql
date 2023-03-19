@@ -12,11 +12,7 @@ renamed as (
         milestonecompleted = 'T' as is_milestone_completed,
         milestonedate as milestone_date,
         milestoneterms as milestone_term_id,
-        projecttask as project_task_id,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp
+        projecttask as project_task_id
 
     from source
 )

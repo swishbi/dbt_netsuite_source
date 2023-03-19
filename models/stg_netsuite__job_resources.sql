@@ -7,11 +7,7 @@ renamed as (
     select
         jobresource as job_resource_id,
         project as project_id,
-        role as job_resource_role,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp
+        role as job_resource_role
 
     from source
 )

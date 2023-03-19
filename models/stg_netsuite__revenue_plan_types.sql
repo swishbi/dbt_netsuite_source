@@ -6,11 +6,7 @@ with source as (
 renamed as (
     select
         key as revenue_plan_type_id,
-        name as revenue_plan_type_name,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp
+        name as revenue_plan_type_name
 
     from source
 )

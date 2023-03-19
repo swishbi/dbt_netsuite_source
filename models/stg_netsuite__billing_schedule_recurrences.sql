@@ -12,11 +12,7 @@ renamed as (
         recurrencedate as recurrence_date,
         recurrenceid as billing_schedule_recurrence_id,
         relativetoprevious = 'T' as is_relative_to_previous,
-        units,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp
+        units
 
     from source
 )

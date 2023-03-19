@@ -20,11 +20,7 @@ renamed as (
         lastmodifieddate as last_modified_date,
         parent as parent_id,
         periodname as accounting_period_name,
-        startdate as starting_at,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp
+        startdate as starting_at
 
     from source
 )

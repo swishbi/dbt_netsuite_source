@@ -22,10 +22,6 @@ renamed as (
         supervisor as supervisor_id,
         title as employee_job_title,
         workcalendar as work_calendar_id,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp,
 
         concat_ws(', ', lastname, firstname) as employee_name_last_first,
         concat_ws(' ', firstname, lastname) as employee_name_first_last,

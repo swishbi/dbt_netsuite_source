@@ -13,11 +13,7 @@ renamed as (
         resource as resource_id,
         serviceitem as service_item_id,
         unitcost as unit_cost,
-        unitprice as unit_price,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp
+        unitprice as unit_price
 
     from source
 )

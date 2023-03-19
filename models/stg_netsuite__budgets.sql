@@ -23,11 +23,7 @@ renamed as (
         location as location_id,
         subsidiary as subsidiary_id,
         total,
-        year as year_id,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp
+        year as year_id
 
     from source
 )

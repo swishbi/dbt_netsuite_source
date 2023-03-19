@@ -96,11 +96,7 @@ renamed as (
         terminmonths as term_in_months,
         newstandardmigratedate as new_standard_migrate_date,
         unbilledreceivablegroup as unbilled_receivable_group,
-        units,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp
+        units
 
     from source
 )

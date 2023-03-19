@@ -13,11 +13,7 @@ renamed as (
         netamount as net_amount,
         posting = 'T' as is_posting,
         transaction as transaction_id,
-        transactionline as transaction_line_id,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp
+        transactionline as transaction_line_id
 
     from source
 )

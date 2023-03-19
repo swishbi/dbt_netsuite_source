@@ -8,11 +8,7 @@ renamed as (
         lastmodifieddate as last_modified_date,
         nkey as customer_address_book_address_id,
         state as customer_state,
-        zip as customer_zip_code,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp
+        zip as customer_zip_code
 
     from source
 )

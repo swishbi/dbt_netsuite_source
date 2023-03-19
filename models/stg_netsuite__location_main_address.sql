@@ -14,11 +14,7 @@ renamed as (
         lastmodifieddate as last_modified_date,
         nkey as main_address_id,
         state as location_state,
-        zip as location_zip_code,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp
+        zip as location_zip_code
 
     from source
 )

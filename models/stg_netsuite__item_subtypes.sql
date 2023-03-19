@@ -4,11 +4,7 @@ with source as (
 renamed as (
     select
         key as item_sub_type_id,
-        name as item_sub_type_name,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp
+        name as item_sub_type_name
 
     from source
 )

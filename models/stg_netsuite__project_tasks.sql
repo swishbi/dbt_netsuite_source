@@ -18,11 +18,7 @@ renamed as (
         remainingwork as remaining_work,
         startdatetime as project_task_start_date,
         status as project_task_status,
-        title as project_task_name,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp
+        title as project_task_name
 
     from source
 )

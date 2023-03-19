@@ -15,10 +15,6 @@ renamed as (
         left
         {%- endif -%} = 'T' as is_leftside,
         longname as account_type_name,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp,
 
         lower(longname) like 'accounts payable%' as is_accounts_payable,
         lower(longname) like 'accounts receivable%' as is_accounts_receivable,

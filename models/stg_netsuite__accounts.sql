@@ -25,13 +25,12 @@ renamed as (
         lastmodifieddate as last_modified_date,
         location as location_id,
         parent as parent_id,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp,
 
         concat_ws('-', acctnumber, accountsearchdisplaynamecopy) as account_number_and_name,
         lower(fullname) like '%intercompany%' as is_account_intercompany
+
+        --The below macro adds the fields defined within your accounts_pass_through_columns variable into the staging model
+        {{ fivetran_utils.fill_pass_through_columns('accounts_pass_through_columns') }}
 
     from source
 )

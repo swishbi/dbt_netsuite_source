@@ -8,11 +8,7 @@ renamed as (
         id as job_type_id,
         isinactive = 'T' as is_inactive,
         name as job_type_name,
-        parent as parent_id,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp
+        parent as parent_id
 
     from source
 )

@@ -9,11 +9,7 @@ renamed as (
         id as time_off_type_id,
         incrementunit as increment_unit,
         minimumincrement as minimum_increment,
-        name as time_off_type_name,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp
+        name as time_off_type_name
 
     from source
 )

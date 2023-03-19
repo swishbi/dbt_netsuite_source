@@ -4,11 +4,7 @@ with source as (
 renamed as (
     select
         addressbookaddress as customer_address_book_address_id,
-        entity as customer_id,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp
+        entity as customer_id
 
     from source
 )

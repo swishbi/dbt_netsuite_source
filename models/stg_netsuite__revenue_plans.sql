@@ -46,11 +46,7 @@ renamed as (
         startoffset as start_offset,
         statusfordisplay as revenue_plan_status_id,
         totalamortized as total_amortized,
-        totalrecognized as total_recognized,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp
+        totalrecognized as total_recognized
 
     from source
 )

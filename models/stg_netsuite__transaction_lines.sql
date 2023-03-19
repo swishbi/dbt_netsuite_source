@@ -35,11 +35,7 @@ renamed as (
         subsidiary as  subsidiary_id,
         taxline = 'T' as is_tax_line,
         transaction as transaction_id,
-        uniquekey as transaction_line_unique_key,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp
+        uniquekey as transaction_line_unique_key
 
     from source
 )

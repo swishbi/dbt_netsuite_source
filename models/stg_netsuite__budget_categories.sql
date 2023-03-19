@@ -8,11 +8,7 @@ renamed as (
         budgettype as budget_type,
         id as budget_category_id,
         isinactive = 'T' as is_inactive,
-        name as budget_category,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp
+        name as budget_category
 
     from source
 )

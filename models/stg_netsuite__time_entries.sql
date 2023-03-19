@@ -28,10 +28,6 @@ renamed as (
         timeofftype as time_off_type_id,
         {% endif %}
         trandate as date,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp,
 
         case
             when isbillable then 'Billable'

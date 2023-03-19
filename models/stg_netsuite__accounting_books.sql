@@ -14,11 +14,7 @@ renamed as (
         isprimary = 'T' as is_primary,
         lastmodifieddate as last_modified_date,
         name as accounting_book_name,
-        twosteprevenueallocation = 'T' as is_two_step_revenue_allocation,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp
+        twosteprevenueallocation = 'T' as is_two_step_revenue_allocation
 
     from source
 )

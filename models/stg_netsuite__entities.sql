@@ -19,10 +19,6 @@ renamed as (
         toplevelparent as top_level_parent_id,
         type as entity_type,
         vendor as vendor_id,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp,
 
         concat('https://{{ var("netsuite_account_id", "123456") }}.app.netsuite.com/app/common/entity', lower(type), '.nl?id=', id) as entity_url_link
 

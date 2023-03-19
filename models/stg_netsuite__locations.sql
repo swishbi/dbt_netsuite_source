@@ -9,11 +9,7 @@ renamed as (
         mainaddress as main_address_id,
         name as location_name,
         parent as parent_id,
-        subsidiary as subsidiary_id,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp
+        subsidiary as subsidiary_id
 
     from source
 )

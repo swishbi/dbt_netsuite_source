@@ -22,10 +22,6 @@ renamed as (
         phone as customer_phone_number,
         receivablesaccount as receivables_account_id,
         salesrep as sales_rep_id,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp,
 
         coalesce(companyname, concat_ws(', ', lastname, firstname)) as customer_name,
         concat_ws(', ', lastname, firstname) as customer_name_last_first,

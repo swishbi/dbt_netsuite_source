@@ -12,11 +12,7 @@ renamed as (
         mainaddress as subsidiary_main_address_id,
         name as subsidiary_name,
         parent as parent_id,
-        state as subsidiary_state,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp
+        state as subsidiary_state
 
     from source
 )
