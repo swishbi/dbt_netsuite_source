@@ -25,6 +25,9 @@ renamed as (
 
         concat('https://{{ var("netsuite_account_id", "123456") }}.app.netsuite.com/app/common/item/item.nl?id=', id) as item_url_link
 
+        --The below macro adds the fields defined within your items_pass_through_columns variable into the staging model
+        {{ fivetran_utils.fill_pass_through_columns('items_pass_through_columns') }}
+
     from source
 )
 select * from renamed

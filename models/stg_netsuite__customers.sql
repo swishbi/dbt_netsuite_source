@@ -28,6 +28,9 @@ renamed as (
         concat_ws(' ', firstname, lastname) as customer_name_fist_last,
         concat('https://{{ var("netsuite_account_id", "123456") }}.app.netsuite.com/app/common/entity/custjob.nl?id=', id) as customer_url_link
 
+        --The below macro adds the fields defined within your customers_pass_through_columns variable into the staging model
+        {{ fivetran_utils.fill_pass_through_columns('customers_pass_through_columns') }}
+
     from source
 )
 select * from renamed

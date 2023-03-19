@@ -20,6 +20,9 @@ renamed as (
         status as project_task_status,
         title as project_task_name
 
+        --The below macro adds the fields defined within your project_tasks_pass_through_columns variable into the staging model
+        {{ fivetran_utils.fill_pass_through_columns('project_tasks_pass_through_columns') }}
+
     from source
 )
 select * from renamed

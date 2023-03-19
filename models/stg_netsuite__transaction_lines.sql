@@ -37,6 +37,9 @@ renamed as (
         transaction as transaction_id,
         uniquekey as transaction_line_unique_key
 
+        --The below macro adds the fields defined within your transaction_lines_pass_through_columns variable into the staging model
+        {{ fivetran_utils.fill_pass_through_columns('transaction_lines_pass_through_columns') }}
+
     from source
 )
 select * from renamed

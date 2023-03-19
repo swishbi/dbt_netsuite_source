@@ -46,6 +46,9 @@ renamed as (
             else false
         end as is_time_off
 
+        --The below macro adds the fields defined within your time_entries_pass_through_columns variable into the staging model
+        {{ fivetran_utils.fill_pass_through_columns('time_entries_pass_through_columns') }}
+
     from source
 )
 select * from renamed
