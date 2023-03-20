@@ -1,7 +1,7 @@
 {{ config(enabled=(var('netsuite__advanced_revenue_management_enabled', false))) }}
 
 with source as (
-      select * from {{ source('netsuite', 'revenueelement') }}
+      select * from {{ var('netsuite_revenue_elements') }}
 ),
 renamed as (
     select
@@ -96,11 +96,7 @@ renamed as (
         terminmonths as term_in_months,
         newstandardmigratedate as new_standard_migrate_date,
         unbilledreceivablegroup as unbilled_receivable_group,
-        units,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp
+        units
 
     from source
 )

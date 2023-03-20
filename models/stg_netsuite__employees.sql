@@ -1,5 +1,5 @@
 with source as (
-      select * from {{ source('netsuite', 'employee') }}
+      select * from {{ var('netsuite_employees') }}
 ),
 renamed as (
     select
@@ -22,14 +22,13 @@ renamed as (
         supervisor as supervisor_id,
         title as employee_job_title,
         workcalendar as work_calendar_id,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp,
 
         concat_ws(', ', lastname, firstname) as employee_name_last_first,
         concat_ws(' ', firstname, lastname) as employee_name_first_last,
         concat('https://{{ var("netsuite_account_id", "123456") }}.app.netsuite.com/app/common/entity/employee.nl?id=', id) as employee_url_link
+
+        --The below macro adds the fields defined within your employees_pass_through_columns variable into the staging model
+        {{ fivetran_utils.fill_pass_through_columns('employees_pass_through_columns') }}
 
     from source
 )

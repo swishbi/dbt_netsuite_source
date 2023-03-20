@@ -1,5 +1,5 @@
 with source as (
-      select * from {{ source('netsuite', 'nexttransactionlinelink') }}
+      select * from {{ var('netsuite_next_transaction_line_links') }}
 ),
 renamed as (
     select
@@ -10,11 +10,7 @@ renamed as (
         nexttype as next_type,
         previousdoc as previous_document_number,
         previousline as previous_line_id,
-        previoustype as previous_type,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp
+        previoustype as previous_type
 
     from source
 )

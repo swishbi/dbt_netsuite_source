@@ -1,5 +1,5 @@
 with source as (
-      select * from {{ source('netsuite', 'entityaddress') }}
+      select * from {{ var('netsuite_entity_address') }}
 ),
 renamed as (
     select
@@ -14,11 +14,7 @@ renamed as (
         lastmodifieddate as last_modified_date,
         nkey as entity_address_id,
         state,
-        zip as zip_code,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp
+        zip as zip_code
 
     from source
 )

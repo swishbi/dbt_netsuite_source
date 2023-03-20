@@ -3,7 +3,7 @@ with accounting_periods as (
 ),
 {% if var('netsuite__multiple_calendars_enabled', false) %}
 accounting_period_fiscal_calendars as (
-    select * from {{ ref('stg_netsuite__accounting_period_fiscal_cal') }}
+    select * from {{ ref('stg_netsuite__accounting_period_fiscal_calendars') }}
 ),
 {% endif %}
 joined as (

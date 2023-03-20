@@ -1,5 +1,5 @@
 with source as (
-      select * from {{ source('netsuite', 'subsidiary') }}
+      select * from {{ var('netsuite_subsidiaries') }}
 ),
 renamed as (
     select
@@ -12,11 +12,10 @@ renamed as (
         mainaddress as subsidiary_main_address_id,
         name as subsidiary_name,
         parent as parent_id,
-        state as subsidiary_state,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp
+        state as subsidiary_state
+
+        --The below macro adds the fields defined within your subsidiaries_pass_through_columns variable into the staging model
+        {{ fivetran_utils.fill_pass_through_columns('subsidiaries_pass_through_columns') }}
 
     from source
 )

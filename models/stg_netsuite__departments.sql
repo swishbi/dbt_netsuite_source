@@ -1,5 +1,5 @@
 with source as (
-      select * from {{ source('netsuite', 'department') }}
+      select * from {{ var('netsuite_departments') }}
 ),
 renamed as (
     select
@@ -9,11 +9,10 @@ renamed as (
         lastmodifieddate as last_modified_date,
         name as department_name,
         parent as parent_id,
-        subsidiary as subsidiary_id,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp
+        subsidiary as subsidiary_id
+
+        --The below macro adds the fields defined within your departments_pass_through_columns variable into the staging model
+        {{ fivetran_utils.fill_pass_through_columns('departments_pass_through_columns') }}
 
     from source
 )

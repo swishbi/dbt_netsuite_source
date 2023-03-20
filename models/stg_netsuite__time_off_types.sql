@@ -1,7 +1,7 @@
 {{ config(enabled=(var('netsuite__time_off_management_enabled', false))) }}
 
 with source as (
-      select * from {{ source('netsuite', 'timeofftype') }}
+      select * from {{ var('netsuite_time_off_types') }}
 ),
 renamed as (
     select
@@ -9,11 +9,7 @@ renamed as (
         id as time_off_type_id,
         incrementunit as increment_unit,
         minimumincrement as minimum_increment,
-        name as time_off_type_name,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp
+        name as time_off_type_name
 
     from source
 )

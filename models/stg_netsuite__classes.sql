@@ -1,5 +1,5 @@
 with source as (
-      select * from {{ source('netsuite', 'classification') }}
+      select * from {{ var('netsuite_classes') }}
 ),
 renamed as (
     select
@@ -8,11 +8,10 @@ renamed as (
         id as class_id,
         isinactive = 'T' as is_inactive,
         lastmodifieddate as last_modified_date,
-        name as class_name,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp
+        name as class_name
+
+        --The below macro adds the fields defined within your classes_pass_through_columns variable into the staging model
+        {{ fivetran_utils.fill_pass_through_columns('classes_pass_through_columns') }}
 
     from source
 )

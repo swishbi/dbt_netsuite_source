@@ -1,7 +1,7 @@
 {{ config(enabled=(var('netsuite__advanced_billing_enabled', false))) }}
 
 with source as (
-      select * from {{ source('netsuite', 'billingschedule') }}
+      select * from {{ var('netsuite_billing_schedules') }}
 ),
 renamed as (
     select
@@ -23,11 +23,7 @@ renamed as (
         recurrenceterms as recurrence_terms_id,
         repeatevery as repeat_every,
         transaction as transaction_id,
-        scheduletype as schedule_type_id,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp
+        scheduletype as schedule_type_id
 
     from source
 )

@@ -1,7 +1,7 @@
 {{ config(enabled=(var('netsuite__advanced_revenue_management_enabled', false))) }}
 
 with source as (
-      select * from {{ source('netsuite', 'billingrevenueevent') }}
+      select * from {{ var('netsuite_billing_revenue_events') }}
 ),
 renamed as (
     select
@@ -17,11 +17,7 @@ renamed as (
         quantity,
         startdate as start_date,
         subscriptionline as subscription_line_id,
-        transactionline as transaction_line_id,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp
+        transactionline as transaction_line_id
 
     from source
 )

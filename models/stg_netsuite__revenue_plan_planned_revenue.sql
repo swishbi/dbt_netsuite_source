@@ -1,7 +1,7 @@
 {{ config(enabled=(var('netsuite__advanced_revenue_management_enabled', false))) }}
 
 with source as (
-      select * from {{ source('netsuite', 'revenueplanplannedrevenue') }}
+      select * from {{ var('netsuite_revenue_plan_planned_revenue') }}
 ),
 renamed as (
     select
@@ -22,11 +22,7 @@ renamed as (
         postingperiod as posting_accounting_period_id,
         recognitionaccount as recognition_account_id,
         revenueplan as revenue_plan_id,
-        totalrecognized as total_recognized,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp
+        totalrecognized as total_recognized
 
     from source
 )

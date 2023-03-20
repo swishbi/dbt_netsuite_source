@@ -1,7 +1,7 @@
 {{ config(enabled=(var('netsuite__time_tracking_enabled', false))) }}
 
 with source as (
-      select * from {{ source('netsuite', 'timebill') }}
+      select * from {{ var('netsuite_time_entries') }}
 ),
 renamed as (
     select
@@ -28,10 +28,6 @@ renamed as (
         timeofftype as time_off_type_id,
         {% endif %}
         trandate as date,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp,
 
         case
             when isbillable then 'Billable'
@@ -49,6 +45,9 @@ renamed as (
             when timeofftype is not null then true
             else false
         end as is_time_off
+
+        --The below macro adds the fields defined within your time_entries_pass_through_columns variable into the staging model
+        {{ fivetran_utils.fill_pass_through_columns('time_entries_pass_through_columns') }}
 
     from source
 )

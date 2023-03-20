@@ -1,7 +1,7 @@
 {{ config(enabled=(var('netsuite__using_jobs', false))) }}
 
 with source as (
-      select * from {{ source('netsuite', 'job') }}
+      select * from {{ var('netsuite_jobs') }}
 ),
 renamed as (
     select
@@ -19,12 +19,11 @@ renamed as (
         projectedenddate as projected_end_date,
         projectmanager as project_manager_id,
         startdate as start_date,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp,
 
         concat('https://{{ var("netsuite_account_id", "123456") }}.app.netsuite.com/app/common/entity/custjob.nl?id=', id) as job_url_link
+
+        --The below macro adds the fields defined within your jobs_pass_through_columns variable into the staging model
+        {{ fivetran_utils.fill_pass_through_columns('jobs_pass_through_columns') }}
 
     from source
 )

@@ -1,7 +1,7 @@
 {{ config(enabled=(var('netsuite__time_off_management_enabled', false))) }}
 
 with source as (
-      select * from {{ source('netsuite', 'workcalendar') }}
+      select * from {{ var('netsuite_work_calendars') }}
 ),
 renamed as (
     select
@@ -13,11 +13,7 @@ renamed as (
         thursday,
         tuesday,
         wednesday,
-        workhoursperday as work_hours_per_day,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp
+        workhoursperday as work_hours_per_day
 
     from source
 )

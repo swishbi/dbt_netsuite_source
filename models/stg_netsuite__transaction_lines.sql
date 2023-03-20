@@ -1,5 +1,5 @@
 with source as (
-      select * from {{ source('netsuite', 'transactionline') }}
+      select * from {{ var('netsuite_transaction_lines') }}
 ),
 renamed as (
     select
@@ -35,11 +35,10 @@ renamed as (
         subsidiary as  subsidiary_id,
         taxline = 'T' as is_tax_line,
         transaction as transaction_id,
-        uniquekey as transaction_line_unique_key,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp
+        uniquekey as transaction_line_unique_key
+
+        --The below macro adds the fields defined within your transaction_lines_pass_through_columns variable into the staging model
+        {{ fivetran_utils.fill_pass_through_columns('transaction_lines_pass_through_columns') }}
 
     from source
 )

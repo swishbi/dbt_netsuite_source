@@ -1,7 +1,7 @@
 {{ config(enabled=(var('netsuite__using_budgets', false))) }}
 
 with source as (
-      select * from {{ source('netsuite', 'budgets') }}
+      select * from {{ var('netsuite_budgets') }}
 ),
 renamed as (
     select
@@ -23,11 +23,7 @@ renamed as (
         location as location_id,
         subsidiary as subsidiary_id,
         total,
-        year as year_id,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp
+        year as year_id
 
     from source
 )

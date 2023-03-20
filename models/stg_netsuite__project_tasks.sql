@@ -1,7 +1,7 @@
 {{ config(enabled=(var('netsuite__using_jobs', false) and var('netsuite__advanced_jobs_enabled', false))) }}
 
 with source as (
-      select * from {{ source('netsuite', 'projecttask') }}
+      select * from {{ var('netsuite_project_tasks') }}
 ),
 renamed as (
     select
@@ -18,11 +18,10 @@ renamed as (
         remainingwork as remaining_work,
         startdatetime as project_task_start_date,
         status as project_task_status,
-        title as project_task_name,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp
+        title as project_task_name
+
+        --The below macro adds the fields defined within your project_tasks_pass_through_columns variable into the staging model
+        {{ fivetran_utils.fill_pass_through_columns('project_tasks_pass_through_columns') }}
 
     from source
 )

@@ -1,5 +1,5 @@
 with source as (
-      select * from {{ source('netsuite', 'customer') }}
+      select * from {{ var('netsuite_customers') }}
 ),
 renamed as (
     select
@@ -22,15 +22,14 @@ renamed as (
         phone as customer_phone_number,
         receivablesaccount as receivables_account_id,
         salesrep as sales_rep_id,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp,
 
         coalesce(companyname, concat_ws(', ', lastname, firstname)) as customer_name,
         concat_ws(', ', lastname, firstname) as customer_name_last_first,
         concat_ws(' ', firstname, lastname) as customer_name_fist_last,
         concat('https://{{ var("netsuite_account_id", "123456") }}.app.netsuite.com/app/common/entity/custjob.nl?id=', id) as customer_url_link
+
+        --The below macro adds the fields defined within your customers_pass_through_columns variable into the staging model
+        {{ fivetran_utils.fill_pass_through_columns('customers_pass_through_columns') }}
 
     from source
 )

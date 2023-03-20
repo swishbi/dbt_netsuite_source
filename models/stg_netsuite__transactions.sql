@@ -1,5 +1,5 @@
 with source as (
-      select * from {{ source('netsuite', 'transaction') }}
+      select * from {{ var('netsuite_transactions') }}
 ),
 renamed as (
     select
@@ -25,13 +25,12 @@ renamed as (
         transactionnumber as transaction_number,
         type as transaction_type,
         voided = 'T' as is_transaction_voided,
-        _swishbi_id,
-        _change_type,
-        _commit_version,
-        _commit_timestamp,
 
         concat('https://{{ var("netsuite_account_id", "123456") }}.app.netsuite.com/app/accounting/transactions/', lower(type), '.nl?id=', id) as transaction_url_link,
         concat(type,'_',id) as reference_id
+
+        --The below macro adds the fields defined within your transactions_pass_through_columns variable into the staging model
+        {{ fivetran_utils.fill_pass_through_columns('transactions_pass_through_columns') }}
 
     from source
 )
