@@ -52,7 +52,7 @@ renamed as (
             when lower(longname) = 'expense' then 16
             when lower(longname) = 'other income' then 17
             when lower(longname) = 'other expense' then 18
-            when not balancesheet then 19
+            when balancesheet <> 'T' then 19
             else null
         end as account_type_sort_helper,
             
