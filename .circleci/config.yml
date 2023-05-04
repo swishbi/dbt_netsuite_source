@@ -32,10 +32,10 @@ jobs:
       - run:
           name: "Run Tests - Databricks"
           environment:
-            DATABRICKS_CATALOG: $DATABRICKS_CATALOG
-            DATABRICKS_HOST: $DATABRICKS_HOST
-            DATABRICKS_HTTP_PATH: $DATABRICKS_HTTP_PATH
-            DATABRICKS_TOKEN: $DATABRICKS_TOKEN
+            DATABRICKS_CATALOG: ${DATABRICKS_CATALOG}
+            DATABRICKS_HOST: ${DATABRICKS_HOST}
+            DATABRICKS_HTTP_PATH: ${DATABRICKS_HTTP_PATH}
+            DATABRICKS_TOKEN: ${DATABRICKS_TOKEN}
           command: |
             . venv/bin/activate
             dbt debug -t databricks --project-dir $DBT_PROJECT_DIR
