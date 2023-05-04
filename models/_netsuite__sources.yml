@@ -622,8 +622,6 @@ sources:
         identifier: "{{ var('netsuite_customer_address_book_identifier', 'customeraddressbook') }}"
       - name: customer_address_book_entity_address
         identifier: "{{ var('netsuite_customer_address_book_entity_address_identifier', 'customeraddressbookentityaddress') }}"
-      - name: deleted_records
-        identifier: "{{ var('netsuite_deleted_record_identifier', 'deletedrecord') }}"
       - name: employees
         identifier: "{{ var('netsuite_employee_identifier', 'employee') }}"
       - name: employee_statuses
@@ -644,8 +642,6 @@ sources:
         identifier: "{{ var('netsuite_job_status_identifier', 'jobstatus') }}"
       - name: job_types
         identifier: "{{ var('netsuite_job_type_identifier', 'jobtype') }}"
-      - name: next_transaction_line_links
-        identifier: "{{ var('netsuite_next_transaction_line_link_identifier', 'nexttransactionlinelink') }}"
       - name: previous_transaction_line_links
         identifier: "{{ var('netsuite_previous_transaction_line_link_identifier', 'previoustransactionlinelink') }}"
       - name: project_tasks
