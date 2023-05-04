@@ -4,7 +4,7 @@ jobs:
 
   integration-tests:
     docker:
-      - image: cimg/python:3.10.10
+      - image: cimg/python:3.9.9
       - image: cimg/postgres:14.0
 
     resource_class: small
@@ -12,7 +12,6 @@ jobs:
     environment:
       DBT_PROFILES_DIR: ./integration_tests/ci
       DBT_PROJECT_DIR: ./integration_tests
-      DBT_VERSION: 1.4.5
 
     steps:
       - checkout
@@ -22,7 +21,7 @@ jobs:
             python3 -m venv venv
             . venv/bin/activate
             pip install -U pip setuptools wheel
-            pip install dbt-core==$DBT_VERSION dbt-postgres==$DBT_VERSION dbt-databricks==$DBT_VERSION
+            pip install -r ./integration_tests/requirements.txt
 
       - run:
           name: Install dbt dependencies
