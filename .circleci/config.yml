@@ -33,7 +33,6 @@ jobs:
           name: "Run Tests - Databricks"
           command: |
             . venv/bin/activate
-            dbt debug -t databricks --project-dir $DBT_PROJECT_DIR
             dbt seed -t databricks --project-dir $DBT_PROJECT_DIR
             dbt run -t databricks --project-dir $DBT_PROJECT_DIR
             dbt test -t databricks --project-dir $DBT_PROJECT_DIR
