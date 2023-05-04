@@ -38,7 +38,10 @@ jobs:
             DATABRICKS_TOKEN: $DATABRICKS_TOKEN
           command: |
             . venv/bin/activate
-            dbt build -t databricks --project-dir $DBT_PROJECT_DIR
+            dbt debug -t databricks --project-dir $DBT_PROJECT_DIR
+            dbt seed -t databricks --project-dir $DBT_PROJECT_DIR
+            dbt run -t databricks --project-dir $DBT_PROJECT_DIR
+            dbt test -t databricks --project-dir $DBT_PROJECT_DIR
 
       - run:
           name: "Run Tests - Postgres"
@@ -50,7 +53,9 @@ jobs:
             POSTGRES_DATABASE: circle_test
           command: |
             . venv/bin/activate
-            dbt build -t postgres --project-dir $DBT_PROJECT_DIR
+            dbt seed -t postgres --project-dir $DBT_PROJECT_DIR
+            dbt run -t postgres --project-dir $DBT_PROJECT_DIR
+            dbt test -t postgres --project-dir $DBT_PROJECT_DIR
 
       # - run:
       #     name: "Set up GCP credentials"
