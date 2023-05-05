@@ -1,4 +1,6 @@
 <p align="center">
+    <a href="https://circleci.com/gh/swishbi/dbt_netsuite_source">
+        <img src="https://dl.circleci.com/status-badge/img/gh/swishbi/dbt_netsuite_source/tree/main.svg?style=svg&circle-token=8dff985ea18b45938dc28f3825ac9b8676383b8f" alt="CircleCI"/></a>
     <a alt="License"
         href="https://github.com/swishbi/dbt_netsuite_source/blob/main/LICENSE">
         <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" /></a>
@@ -9,6 +11,7 @@
     <a alt="PRs">
         <img src="https://img.shields.io/badge/Contributions-welcome-blueviolet" /></a>
 </p>
+
 
 # Netsuite Source dbt Package
 # 📣 What does this dbt package do?
