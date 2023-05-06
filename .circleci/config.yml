@@ -4,8 +4,8 @@ jobs:
 
   integration-tests:
     docker:
-      - image: cimg/python:3.10.10-slim-bullseye
-      - image: cimg/postgres:14.1-alpine
+      - image: cimg/python:3.10.10
+      - image: cimg/postgres:15.2
 
     resource_class: small
 
