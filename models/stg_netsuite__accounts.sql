@@ -6,13 +6,12 @@ renamed as (
         accountsearchdisplaynamecopy as account_name,
         acctnumber as account_number,
         accttype as account_type_id,
-        cashflowrate as cash_flow_rate_type,
         class as class_id,
         {% if var('netsuite__multiple_currencies_enabled', false) %}
+        cashflowrate as cash_flow_rate_type,
         currency as currency_id,
         generalrate as general_rate_type,
         {% endif %}
-        deferralacct as deferral_account_id,
         department as department_id,
         description as account_description,
         externalid as account_external_id,
