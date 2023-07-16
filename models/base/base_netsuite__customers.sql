@@ -7,6 +7,11 @@ entity_address as (
 employees as (
     select * from {{ ref('base_netsuite__employees') }}
 ),
+{% if var('netsuite__using_customer_categories', false) %}
+customer_categories as (
+    select * from {{ ref('stg_netsuite__customer_categories') }}
+),
+{% endif %}
 joined as (
     
     select
@@ -19,6 +24,9 @@ joined as (
         sales_rep.employee_name_first_last as sales_rep_name_first_last,
         coalesce(parent_customer.company_name, customers.company_name) as parent_company_name,
         coalesce(parent_customer.customer_name, customers.customer_name) as parent_customer_name
+        {% if var('netsuite__using_customer_categories', false) %}
+        ,customer_categories.customer_category_name
+        {% endif %}
 
     from customers
     
@@ -30,5 +38,9 @@ joined as (
 
     left join customers as parent_customer 
         on parent_customer.customer_id = customers.parent_id
+    {% if var('netsuite__using_customer_categories', false) %}
+    left join customer_categories 
+        on customer_categories.customer_category_id = customers.customer_category_id
+    {% endif %}
 )
 select * from joined

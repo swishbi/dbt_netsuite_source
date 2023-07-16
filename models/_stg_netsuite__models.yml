@@ -224,6 +224,19 @@ models:
       - name: symbol
         description: Currency symbol.
 
+  - name: stg_netsuite__customer_categories
+    description: "{{ doc('customer_categories_table') }}"
+    columns:
+      - name: customer_category_id
+        description: "{{ doc('customer_category_id') }}"
+        tests:
+          - unique
+          - not_null
+      - name: name
+        description: Name of the customer category.
+      - name: _fivetran_synced
+        description: "{{ doc('_fivetran_synced') }}"
+
   - name: stg_netsuite__customers
     description: "{{ doc('customers_table') }}"
     columns:

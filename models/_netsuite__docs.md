@@ -10,6 +10,8 @@
 
 {% docs consolidated_exchange_rates_table %} Table detailing average, historical and current exchange rates for all accounting periods. {% enddocs %}
 
+{% docs customer_categories_table %} A table containing categories and how they map to customers. {% enddocs %}
+
 {% docs customers_table %} Table detailing all customer information. {% enddocs %}
 
 {% docs currencies_table %} Table detailing all currency information. {% enddocs %}
@@ -116,3 +118,5 @@
 {% docs accounting_book_id %} Unique identifier of the accounting book. {% enddocs %}
 
 {% docs account_type_id %} Unique identifier of thea account type. {% enddocs %}
+
+{% docs vendor_category_id %} Unique identifier of the customer category. {% enddocs %}

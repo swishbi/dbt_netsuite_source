@@ -108,6 +108,7 @@ vars:
     netsuite__time_off_management_enabled: true # Enable `timeofftype`, `workcalendar`, and `workcalendarholiday` if you are using the Time Off Management feature
     netsuite__time_tracking_enabled: true # Enable `timebill` if you are using the Time Tracking feature
     netsuite__using_budgets: true # Enable `budget`, `budgetcategory`, and `budgetsmachine` if you use budgets
+    netsuite__using_customer_categories: true # Enable `customercategory` if you categorize your customers
     netsuite__using_vendor_categories: true # Enable `vendorcategory` if you categorize your vendors
     netsuite__using_jobs: true # Enable `job`, `jobstatus`, and `jobtype` if you use jobs
 ```
