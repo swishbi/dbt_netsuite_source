@@ -119,4 +119,4 @@
 
 {% docs account_type_id %} Unique identifier of thea account type. {% enddocs %}
 
-{% docs vendor_category_id %} Unique identifier of the customer category. {% enddocs %}
+{% docs customer_category_id %} Unique identifier of the customer category. {% enddocs %}
