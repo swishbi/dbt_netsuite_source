@@ -27,6 +27,7 @@ vars:
     netsuite_classes: "{{ source('netsuite', 'classification') }}"
     netsuite_consolidated_exchange_rates: "{{ source('netsuite', 'consolidated_exchange_rate') }}"
     netsuite_currencies: "{{ source('netsuite', 'currency') }}"
+    netsuite_customer_categories: "{{ source('netsuite', 'customer_category') }}"
     netsuite_customers: "{{ source('netsuite', 'customer') }}"
     netsuite_departments: "{{ source('netsuite', 'department') }}"
     netsuite_employee_status_categories: "{{ source('netsuite', 'employee_status_categories') }}"

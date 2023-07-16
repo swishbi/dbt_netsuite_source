@@ -244,6 +244,19 @@ sources:
           - name: symbol
             description: Currency symbol.
 
+      - name: customer_category
+        identifier: "{{ var('netsuite_customer_category_identifier', 'customercategory') }}"
+        description: "{{ doc('customer_categories_table') }}"
+        config:
+          enabled: "{{ var('netsuite__using_customer_categories', true) }}"
+        columns:
+          - name: id
+            description: "{{ doc('customer_category_id') }}"
+          - name: name
+            description: Name of the customer category.
+          - name: _fivetran_synced
+            description: "{{ doc('_fivetran_synced') }}"
+
       - name: customer
         identifier: "{{ var('netsuite_customer_identifier', 'customer') }}"
         description: "{{ doc('customers_table') }}"
@@ -620,55 +633,78 @@ sources:
 
       - name: employees
         identifier: "{{ var('netsuite_employee_identifier', 'employee') }}"
+
       - name: employee_statuses
         identifier: "{{ var('netsuite_employee_status_identifier', 'employeestatus') }}"
+
       - name: employee_status_categories
         identifier: "{{ var('netsuite_employee_status_category_identifier', 'employeestatuscategory') }}"
+
       - name: employee_types
         identifier: "{{ var('netsuite_employee_type_identifier', 'employeetype') }}"
+
       - name: employee_type_categories
         identifier: "{{ var('netsuite_employee_type_category_identifier', 'employeetypecategory') }}"
+
       - name: item_subtypes
         identifier: "{{ var('netsuite_item_subtype_identifier', 'itemsubtype') }}"
+
       - name: item_types
         identifier: "{{ var('netsuite_item_type_identifier', 'itemtype') }}"
+
       - name: job_resources
         identifier: "{{ var('netsuite_job_resources_identifier', 'jobresources') }}"
+
       - name: job_statuses
         identifier: "{{ var('netsuite_job_status_identifier', 'jobstatus') }}"
+
       - name: job_types
         identifier: "{{ var('netsuite_job_type_identifier', 'jobtype') }}"
+
       - name: project_tasks
         identifier: "{{ var('netsuite_project_task_identifier', 'projecttask') }}"
+
       - name: project_task_assignees
         identifier: "{{ var('netsuite_project_task_assignee_identifier', 'projecttaskassignee') }}"
+
       - name: revenue_elements
         identifier: "{{ var('netsuite_revenue_element_identifier', 'revenueelement') }}"
         tags: ['arm']
+
       - name: revenue_plans
         identifier: "{{ var('netsuite_revenue_plan_identifier', 'revenueplan') }}"
         tags: ['arm']
+
       - name: revenue_plan_planned_costs
         identifier: "{{ var('netsuite_revenue_plan_planned_cost_identifier', 'revenueplanplannedcost') }}"
         tags: ['arm']
+
       - name: revenue_plan_planned_revenue
         identifier: "{{ var('netsuite_revenue_plan_planned_revenue_identifier', 'revenueplanplannedrevenue') }}"
         tags: ['arm']
+
       - name: revenue_plan_statuses
         identifier: "{{ var('netsuite_revenue_plan_status_identifier', 'revenueplanstatus') }}"
         tags: ['arm']
+
       - name: revenue_plan_types
         identifier: "{{ var('netsuite_revenue_plan_type_identifier', 'revenueplantype') }}"
         tags: ['arm']
+
       - name: time_entries
         identifier: "{{ var('netsuite_time_entry_identifier', 'timebill') }}"
+
       - name: time_off_types
         identifier: "{{ var('netsuite_time_off_type_identifier', 'timeofftype') }}"
+
       - name: transaction_sales_teams
         identifier: "{{ var('netsuite_transaction_sales_team_identifier', 'transactionsalesteam') }}"
+
       - name: transaction_statuses
         identifier: "{{ var('netsuite_transaction_status_identifier', 'transactionstatus') }}"
+
       - name: work_calendars
         identifier: "{{ var('netsuite_work_calendar_identifier', 'workcalendar') }}"
+
       - name: work_calendar_holidays
         identifier: "{{ var('netsuite_work_calendar_holiday_identifier', 'workcalendarholiday') }}"
