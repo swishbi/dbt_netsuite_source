@@ -185,7 +185,7 @@ sources:
       - name: budget_categories
         identifier: "{{ var('netsuite_budget_category_identifier', 'budgetcategory') }}"
       - name: budgets
-        identifier: "{{ var('netsuite_budget_identifier', 'budget') }}"
+        identifier: "{{ var('netsuite_budget_identifier', 'budgets') }}"
       - name: budgets_machine
         identifier: "{{ var('netsuite_budgets_machine_identifier', 'budgetsmachine') }}"
 
