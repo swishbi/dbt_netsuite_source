@@ -76,10 +76,10 @@ Include the following netsuite_source package version in your `packages.yml` fil
 ```yaml
 packages:
   - git: "https://github.com/swishbi/dbt_netsuite_source.git"
-    revision: 0.1.0
+    revision: v0.X.X # See latest version in releases
   # use this format when accessing your repository via a github application token
   - git: "https://{{env_var('DBT_ENV_SECRET_GIT_CREDENTIAL')}}@github.com/swishbi/dbt_netsuite_source.git" # git HTTPS URL
-    revision: 0.1.0
+    revision: v0.X.X # See latest version in releases
 ```
 
 ## Step 3: Define database and schema variables

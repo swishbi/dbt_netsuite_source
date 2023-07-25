@@ -1,3 +1,12 @@
+# dbt_netsuite_source v0.2.2
+
+## 🚨 Breaking Changes 🚨:
+[PR #9](https://github.com/swishbi/dbt_netsuite_source/pull/9) includes the following breaking changes:
+- Changes the default identifier for the budgets table from `budget` to `budgets`.
+
+## Contributors
+- [phillem15](https://github.com/phillem15) ([#9](https://github.com/swishbi/dbt_netsuite_source/pull/9))
+
 # dbt_netsuite_source v0.2.1
 
 ## 🎉 Feature Updates 🎉
