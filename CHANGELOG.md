@@ -1,3 +1,12 @@
+# dbt_netsuite_source v0.2.3
+
+## 🚨 Breaking Changes 🚨:
+[PR #10](https://github.com/swishbi/dbt_netsuite_source/pull/10) includes the following breaking changes:
+- Removes `quantity` and `rate` columns from `stg_netsuite__transaction_lines` model. This allows these columns to be added as pass through.
+
+## Contributors
+- [phillem15](https://github.com/phillem15) ([#10](https://github.com/swishbi/dbt_netsuite_source/pull/10))
+
 # dbt_netsuite_source v0.2.2
 
 ## 🚨 Breaking Changes 🚨:
