@@ -19,7 +19,13 @@ renamed as (
         isclosed = 'T' as is_closed,
         iscogs = 'T' as is_cogs,
         mainline = 'T' as is_main_line,
-        taxline = 'T' as is_tax_line
+        taxline = 'T' as is_tax_line,
+        quantity,
+        rateamount as rate_amount
+        {% if var('netsuite__inventory_enabled', false) %}
+        ,isinventoryaffecting = 'T' as is_inventory_affecting
+        ,accountinglinetype as accounting_line_type
+        {% endif %}
 
         --The below macro adds the fields defined within your transaction_lines_pass_through_columns variable into the staging model
         {{ fivetran_utils.fill_pass_through_columns('transaction_lines_pass_through_columns') }}
