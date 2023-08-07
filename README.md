@@ -97,8 +97,10 @@ It's possible that your Netsuite connector does not sync every table that this p
 vars:
   netsuite_source:
     netsuite__advanced_billing_enabled: true # Enable `billingschedulemilestone`, `billingscheduletype`, and `billingschedule` if you are using the Advanced Billing featre
+    netsuite__advanced_invnetory_management_enabled: true # Enable `bins` and `inventoryassignment`` if you are using Advanced Inventory management features.
     netsuite__advanced_jobs_enabled: true # Enable `jobresources`, `projecttask` and `projecttaskassigneee` if you are using the Advanced Jobs feature
     netsuite__advanced_revenue_management_enabled: true # Enable `billingrevenueevent`, `billingschedulerecurrence`, `revenueelement`, `revenueplanplannedcost`, `revenueplanplannedrevenue`, `revenueplanstatus`, revenueplantype`, and `revenueplan` if you are using the Advanced Revenue Management feature
+    netsuite__inventory_management_enabled: true # Enable the necessary fields in `transactionline` to calculate inventory balances.
     netsuite__multibook_accounting_enabled: true # Enable `accountingbooksubsidiary` and `accountingbook` if you are using the Multi-Book Accounting feature
     netsuite__multiple_budgets_enabled: true # Enable `budgetcategory` if you are using the Multiple Budgets feature
     netsuite__multiple_calendars_enabled: true # Enable `accountingperiodfiscalcalendar` if you are using the Multiple Calendars feature
