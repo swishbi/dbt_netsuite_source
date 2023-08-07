@@ -1,3 +1,17 @@
+# dbt_netsuite_source v0.3.0
+
+## 🚨 Breaking Changes 🚨:
+[PR #11](https://github.com/swishbi/dbt_netsuite_source/pull/11) includes the following breaking changes:
+- Re-introduces `quantity`, `rateamount`, and `voided` columns to `stg_netsuite__transaction_lines` model. If these have been added as pass through they will need to be removed from the pass through variable.
+
+## 🎉 Feature Updates 🎉
+[PR #11](https://github.com/swishbi/dbt_netsuite_source/pull/11) includes the following feature updates:
+- Incorporates `isinventoryaffecting` and `accountinglinetype` to the `stg_netsuite__transaction_lines` model as a feature via the `netsuite__inventory_management_enabled` variable.
+- Incorporates `bins` and `inventoryassignment` staging models as a feature via the `netsuite__advanced_inventory_management_enabled` variable.
+
+## Contributors
+- [phillem15](https://github.com/phillem15) ([#11](https://github.com/swishbi/dbt_netsuite_source/pull/11))
+
 # dbt_netsuite_source v0.2.3
 
 ## 🚨 Breaking Changes 🚨:
