@@ -22,7 +22,7 @@ renamed as (
         taxline = 'T' as is_tax_line,
         quantity,
         rateamount as rate_amount
-        {% if var('netsuite__inventory_enabled', false) %}
+        {% if var('netsuite__inventory_management_enabled', false) %}
         ,isinventoryaffecting = 'T' as is_inventory_affecting
         ,accountinglinetype as accounting_line_type
         {% endif %}
