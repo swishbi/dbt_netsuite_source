@@ -22,6 +22,7 @@ renamed as (
         tranid as transaction_name,
         transactionnumber as transaction_number,
         type as transaction_type,
+        voided = 'T' as is_voided,
 
         concat('https://{{ var("netsuite_account_id", "123456") }}.app.netsuite.com/app/accounting/transactions/', lower(type), '.nl?id=', id) as transaction_url_link,
         concat(type,'_',id) as reference_id
