@@ -598,8 +598,6 @@ sources:
             description: "{{ doc('accounting_period_id') }}"
           - name: posting
             description: Boolean indicating if the transaction is a posting event. Represented as "T" or "F" for true and false respectively.
-          - name: intercoadj
-            description: Boolean indicating if the transaction is an intercompany adjustment. Represented as "T" or "F" for true and false respectively.
           - name: isreversal
             description: Boolean indicating if the transaction is a reversal entry. Represented as "T" or "F" for true and false respectively.
 
