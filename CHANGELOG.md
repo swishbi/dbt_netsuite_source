@@ -1,3 +1,9 @@
+# dbt_netsuite_source v0.3.1
+
+## 🚨 Breaking Changes 🚨:
+[PR #12](https://github.com/swishbi/dbt_netsuite_source/pull/12) includes the following breaking changes:
+- Removes `actualwork` field from `projecttask` record. This field has been deprecated by NetSuite.
+
 # dbt_netsuite_source v0.3.0
 
 ## 🚨 Breaking Changes 🚨:

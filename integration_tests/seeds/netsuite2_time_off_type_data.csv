@@ -1,0 +1,5 @@
+﻿displayname,id,incrementunit,minimumincrement,name
+Bereavement (Days),4,DAYS,0.5,Bereavement
+Vacation Time (Days),1,DAYS,0.5,Vacation Time
+Floating Holiday (Days),2,DAYS,0.5,Floating Holiday
+Sick Time (Days),5,DAYS,0.5,Sick Time

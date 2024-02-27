@@ -1,0 +1,7 @@
+﻿actualwork,fullname,id,issummarytask,nonbillabletask,parent,plannedwork,project,remainingwork,startdatetime,status,title
+0,Discovery,1,F,F,,50,7,50,5/6/2021 8:00,PROGRESS,Discovery
+249,Implementation,2,F,F,,249,7,0,7/1/2020 12:00,COMPLETE,Implementation
+0,Documentation,3,F,F,,0,7,0,5/1/2020 8:00,COMPLETE,Documentation
+185.5,Sales,4,F,T,,180,9,0,5/1/2020 8:00,PROGRESS,Sales
+0,Support,5,F,F,,0,8,0,8/27/2018 8:00,PROGRESS,Support
+3,Migration,6,F,F,,3,8,0,5/1/2020 8:00,COMPLETE,Migration

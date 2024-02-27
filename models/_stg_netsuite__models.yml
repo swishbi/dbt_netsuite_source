@@ -612,8 +612,6 @@ models:
         description: "{{ doc('accounting_period_id') }}"
       - name: is_posting
         description: Boolean indicating if the transaction is a posting event.
-      - name: is_intercompany_adjustment
-        description: Boolean indicating if the transaction is an intercompany adjustment.
       - name: is_reversal
         description: Boolean indicating if the transaction is a reversal entry.
 

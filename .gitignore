@@ -5,5 +5,7 @@ logs/
 keyfile.json
 .DS_Store
 develop/
+.venv/
+venv/
 
 dbt_packages/
