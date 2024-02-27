@@ -5,7 +5,6 @@ with source as (
 ),
 renamed as (
     select
-        actualwork as actual_work,
         fullname as project_task_full_name,
         id as project_task_id,
         issummarytask = 'T' as is_summary_task,
